@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TodoController;
 
 
 Route::group(['controller' => AuthController::class], function(){
@@ -18,5 +19,8 @@ Route::middleware('auth:sanctum')->group(function (){
        return response()->json($request->user());
     });
 
+    Route::apiResource('todos', TodoController::class);
+    Route::patch('/todos/{id}/restore', [TodoController::class, 'restore']);
+    Route::patch('/todos/{id}/toggle', [TodoController::class, 'toggle']);
 });
 
