@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\CategoryController;
 use App\Models\Category;
 use App\Models\Todo;
 use App\Models\User;
@@ -38,7 +39,11 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Other'],
         ];
 
-        DB::table('categories')->insert($categories);
+        foreach ($categories as $category) {
+            Category::create([
+                'name' => $category['name']
+            ]);
+        }
 
         Todo::factory()
             ->for($john)
