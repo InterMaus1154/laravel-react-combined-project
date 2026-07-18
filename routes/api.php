@@ -6,6 +6,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TodoController;
 
 
+Route::get('/', function(){
+   return response()->json([
+       'message' => 'Hello from the API'
+   ]);
+});
+
 Route::group(['controller' => AuthController::class], function(){
 
     Route::post('/login', 'login');

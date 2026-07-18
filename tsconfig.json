@@ -1,0 +1,33 @@
+{
+    "include": ["resources/js", "client"],
+    "compilerOptions": {
+        // Environment Settings
+        // See also https://aka.ms/tsconfig/module
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "noEmit": true,
+        "target": "esnext",
+        "types": [
+            "vite/client"
+        ],
+        // Other Outputs
+        // Stricter Typechecking Options
+        "noUncheckedIndexedAccess": true,
+        "exactOptionalPropertyTypes": true,
+        // Style Options
+        "noImplicitReturns": false,
+        "noImplicitOverride": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": false,
+        "noPropertyAccessFromIndexSignature": true,
+        // Recommended Options
+        "strict": true,
+        "jsx": "react-jsx",
+        "verbatimModuleSyntax": true,
+        "isolatedModules": true,
+        "noUncheckedSideEffectImports": true,
+        "moduleDetection": "force",
+        "skipLibCheck": true
+    }
+}
