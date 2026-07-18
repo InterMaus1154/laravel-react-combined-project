@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// hand over to react any missing route
+Route::get('{any}', [ClientController::class, 'handover'])->where('any', '.*');
