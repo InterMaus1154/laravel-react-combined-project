@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\TodoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\TodoController;
 
 
 Route::get('/', function(){
@@ -29,7 +29,7 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::patch('/todos/{id}/restore', [TodoController::class, 'restore']);
     Route::patch('/todos/{id}/toggle', [TodoController::class, 'toggle']);
 
-    Route::controller(\App\Http\Controllers\CategoryController::class)->group(function(){
+    Route::controller(\App\Http\Controllers\Api\CategoryController::class)->group(function(){
        Route::get('/categories', 'index');
        Route::get('/categories/{id}', 'show');
     });

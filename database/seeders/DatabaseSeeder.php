@@ -2,13 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Http\Controllers\CategoryController;
 use App\Models\Category;
 use App\Models\Todo;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
