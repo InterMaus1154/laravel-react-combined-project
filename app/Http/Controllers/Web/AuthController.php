@@ -24,13 +24,11 @@ class AuthController extends Controller
             ->validated();
 
         if(Auth::attempt($data)){
-            session()->invalidate();
-            session()->regenerate();
-            session()->regenerateToken();
+            $request->session()->regenerate();
             return redirect()->to('/');
         }
 
-        return redirect()->back()->withInput(['username'])->withErrors(['auth' => 'Invalid credentials']);
+        return redirect()->back()->withInput($request->only('username'))->withErrors(['auth' => 'Invalid credentials']);
     }
 
     public function renderRegister(): View

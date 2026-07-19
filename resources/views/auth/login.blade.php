@@ -10,7 +10,7 @@
         @enderror
         <div class="flex flex-col items-start gap-2 w-full">
             <label for="username">Username</label>
-            <input type="text" name="username" placeholder="Username" id="username" class="w-full border border-purple-100 rounded-sm p-2">
+            <input type="text" name="username" placeholder="Username" id="username" value="{{old('username')}}" class="w-full border border-purple-100 rounded-sm p-2">
             @error('username')
             <div class="px-4 py-2 bg-red-400 rounded-sm w-full">
                 <span class="text-white font-bold text-base">{{$message}}</span>
