@@ -9,6 +9,6 @@ class ClientController extends Controller
 {
     public function handover(): View
     {
-        return view('app');
+        return view('client');
     }
 }
